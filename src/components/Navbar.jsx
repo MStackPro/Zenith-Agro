@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Logo from '../assets/logo.png'
 import { Link, NavLink } from 'react-router-dom'
 import {navlinks} from './data'
@@ -8,9 +8,23 @@ import './navbar.css'
 
 const Navbar = () => {
   const [isNavShowing, setIsNavShowing] = useState(false)
+  const [navbarBgColor, setnavbarBgColor] = useState(false)
+
+  const navbarColorChange = () => {
+      if (window.scrollY >= 80) {
+        setnavbarBgColor(true)
+      } else {
+        setnavbarBgColor(false)
+      }
+  }
+
+  useEffect (() => {
+    navbarColorChange()
+    window.addEventListener('scroll', navbarColorChange)
+  })
 
   return (
-    <nav className=''>
+    <nav className={navbarBgColor ? 'bg-ColorSecondary transition duration-500ms ease-in-out' : 'bg-transparent'}>
       <div className="container nav-container">
         {/* ============= NAV LOGO ========== */}
         <Link to='/' className='nav-logo'>

@@ -11,7 +11,7 @@ const Shop = ({ title, image, price, desc, icon }) => {
           <span className="bg-ColorYellow py-1 px-2 font-semibold rounded-2xl">{price}</span>
         </div>
         <p>{desc}</p>
-        <div>{icon}</div>
+        <img src={icon} alt="rating" className="w-24" />
       </div>
     </CardTemplate>
   );

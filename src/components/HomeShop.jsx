@@ -9,7 +9,7 @@ const HomeShop = () => {
       <div className="container shop-container text-center">
         <h2 className='font-semibold text-4xl mb-16'>Shop from us</h2>
 
-        <div className="shop-products grid grid-cols-2 gap-8 mb-12">
+        <div className="shop-products grid grid-cols-2 gap-20 mb-12">
           {
             shop.map(({id, title, image, price, icon, desc}) => {
               return (
